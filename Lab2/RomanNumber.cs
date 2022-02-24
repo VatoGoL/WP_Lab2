@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Lab2;
 //!L!X!VDXXXV (65 535)
 //vxxxl
 //lxxxv (85)
@@ -18,7 +19,7 @@ namespace Lab2
         {
             if(n < ushort.MinValue || n > ushort.MaxValue)
             {
-                throw new ArgumentException("Аргумент выходит за диапазон значений ushort");
+                throw new RomanNumberException("Аргумент выходит за диапазон значений ushort");
             }
             number = n;
         }
@@ -27,11 +28,11 @@ namespace Lab2
         {
             if(n1 == null || n2 == null)
             {
-                throw new ArgumentNullException("Передаваемые аргументы содержат null");
+                throw new RomanNumberException("Передаваемые аргументы содержат null");
             }
             if ((n1.number+n2.number) < ushort.MinValue || (n1.number + n2.number) > ushort.MaxValue)
             {
-                throw new ArgumentException("Результат сложения аргументов выходит за диапазон значений ushort");
+                throw new RomanNumberException("Результат сложения аргументов выходит за диапазон значений ushort");
             }
             return new RomanNumber((ushort)(n1.number + n2.number));
         }
@@ -40,11 +41,11 @@ namespace Lab2
         {
             if (n1 == null || n2 == null)
             {
-                throw new ArgumentNullException("Передаваемые аргументы содержат null");
+                throw new RomanNumberException("Передаваемые аргументы содержат null");
             }
             if ((n1.number - n2.number) < ushort.MinValue || (n1.number - n2.number) > ushort.MaxValue)
             {
-                throw new ArgumentException("Результат разницы аргументов выходит за диапазон значений ushort");
+                throw new RomanNumberException("Результат разницы аргументов выходит за диапазон значений ushort");
             }
             return new RomanNumber((ushort)(n1.number - n2.number));
         }
@@ -53,11 +54,11 @@ namespace Lab2
         {
             if (n1 == null || n2 == null)
             {
-                throw new ArgumentNullException("Передаваемые аргументы содержат null");
+                throw new RomanNumberException("Передаваемые аргументы содержат null");
             }
             if ((n1.number * n2.number) < ushort.MinValue || (n1.number * n2.number) > ushort.MaxValue)
             {
-                throw new ArgumentException("Результат умножения аргументов выходит за диапазон значений ushort");
+                throw new RomanNumberException("Результат умножения аргументов выходит за диапазон значений ushort");
             }
             return new RomanNumber((ushort)(n1.number * n2.number));
         }
@@ -66,11 +67,11 @@ namespace Lab2
         {
             if (n1 == null || n2 == null)
             {
-                throw new ArgumentNullException("Передаваемые аргументы содержат null");
+                throw new RomanNumberException("Передаваемые аргументы содержат null");
             }
             if(n2.number == 0)
             {
-                throw new ArgumentException("Второй агрумент равен 0, деление на 0 недопустимо");
+                throw new RomanNumberException("Второй агрумент равен 0, деление на 0 недопустимо");
             }
             return new RomanNumber((ushort)(n1.number / n2.number));
         }
@@ -253,7 +254,7 @@ namespace Lab2
             {
                 return this.number.CompareTo(((RomanNumber)obj).number);
             }
-            throw new ArgumentException("Некорректное значение параметра!");
+            throw new RomanNumberException("Некорректное значение параметра!");
         }
     }
 }
