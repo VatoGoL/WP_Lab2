@@ -8,10 +8,10 @@ public class Program
         int n = 5;
         Random random = new Random();
         RomanNumber[] A_Test = {
-            new RomanNumber((ushort)(random.Next(0, ushort.MaxValue)/3)),
-            new RomanNumber((ushort)(random.Next(0, ushort.MaxValue)/3)),
-            new RomanNumber((ushort)(random.Next(0, ushort.MaxValue)/3)),
-            new RomanNumber((ushort)(random.Next(0, ushort.MaxValue)/3)),
+            new RomanNumber(15),
+            new RomanNumber(16),
+            new RomanNumber(1),
+            new RomanNumber(2),
             new RomanNumber((ushort)(random.Next(0, ushort.MaxValue)/3))
         };
 

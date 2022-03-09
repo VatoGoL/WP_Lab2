@@ -17,9 +17,9 @@ namespace Lab2
         //класса
         public RomanNumber(ushort n)
         {
-            if(n < ushort.MinValue || n > ushort.MaxValue)
+            if(n < ushort.MinValue || n > ushort.MaxValue || n == 0)
             {
-                throw new RomanNumberException("Аргумент выходит за диапазон значений ushort");
+                throw new RomanNumberException("Аргумент выходит за диапазон значений");
             }
             number = n;
         }
@@ -228,7 +228,7 @@ namespace Lab2
                     value += "VI";
                     break;
                 case 7:
-                    value += "VIII";
+                    value += "VII";
                     break;
                 case 8:
                     value += "VIII";
